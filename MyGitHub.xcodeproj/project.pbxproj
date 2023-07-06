@@ -13,6 +13,9 @@
 		C28D39B82A5690E300FC192A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28D39B62A5690E300FC192A /* Main.storyboard */; };
 		C28D39BA2A5690E300FC192A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28D39B92A5690E300FC192A /* Assets.xcassets */; };
 		C28D39BD2A5690E300FC192A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28D39BB2A5690E300FC192A /* LaunchScreen.storyboard */; };
+		C28D39CC2A569B9800FC192A /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39CB2A569B9800FC192A /* URLSession.swift */; };
+		C28D39CE2A569C2C00FC192A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39CD2A569C2C00FC192A /* NetworkService.swift */; };
+		C28D39D02A569C8200FC192A /* DataModel+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39CF2A569C8200FC192A /* DataModel+Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		C28D39B92A5690E300FC192A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C28D39BC2A5690E300FC192A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C28D39BE2A5690E300FC192A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C28D39CB2A569B9800FC192A /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		C28D39CD2A569C2C00FC192A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C28D39CF2A569C8200FC192A /* DataModel+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataModel+Constants.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		C28D39AF2A5690E200FC192A /* MyGitHub */ = {
 			isa = PBXGroup;
 			children = (
+				C28D39CA2A569B5F00FC192A /* Network */,
 				C28D39C72A56986D00FC192A /* App Delegate */,
 				C28D39C42A56983900FC192A /* Model */,
 				C28D39C52A56983E00FC192A /* View */,
@@ -68,6 +75,7 @@
 		C28D39C42A56983900FC192A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C28D39CF2A569C8200FC192A /* DataModel+Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,6 +113,15 @@
 				C28D39BE2A5690E300FC192A /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C28D39CA2A569B5F00FC192A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C28D39CD2A569C2C00FC192A /* NetworkService.swift */,
+				C28D39CB2A569B9800FC192A /* URLSession.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +195,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C28D39CE2A569C2C00FC192A /* NetworkService.swift in Sources */,
+				C28D39D02A569C8200FC192A /* DataModel+Constants.swift in Sources */,
 				C28D39B52A5690E300FC192A /* ViewController.swift in Sources */,
 				C28D39B12A5690E200FC192A /* AppDelegate.swift in Sources */,
+				C28D39CC2A569B9800FC192A /* URLSession.swift in Sources */,
 				C28D39B32A5690E300FC192A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
