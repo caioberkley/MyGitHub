@@ -56,15 +56,55 @@
 		C28D39AF2A5690E200FC192A /* MyGitHub */ = {
 			isa = PBXGroup;
 			children = (
-				C28D39B02A5690E200FC192A /* AppDelegate.swift */,
-				C28D39B22A5690E300FC192A /* SceneDelegate.swift */,
-				C28D39B42A5690E300FC192A /* ViewController.swift */,
-				C28D39B62A5690E300FC192A /* Main.storyboard */,
-				C28D39B92A5690E300FC192A /* Assets.xcassets */,
-				C28D39BB2A5690E300FC192A /* LaunchScreen.storyboard */,
-				C28D39BE2A5690E300FC192A /* Info.plist */,
+				C28D39C72A56986D00FC192A /* App Delegate */,
+				C28D39C42A56983900FC192A /* Model */,
+				C28D39C52A56983E00FC192A /* View */,
+				C28D39C62A56984400FC192A /* Controller */,
+				C28D39C82A56988300FC192A /* Resources */,
 			);
 			path = MyGitHub;
+			sourceTree = "<group>";
+		};
+		C28D39C42A56983900FC192A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C28D39C52A56983E00FC192A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C28D39BB2A5690E300FC192A /* LaunchScreen.storyboard */,
+				C28D39B62A5690E300FC192A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C28D39C62A56984400FC192A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C28D39B42A5690E300FC192A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C28D39C72A56986D00FC192A /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C28D39B02A5690E200FC192A /* AppDelegate.swift */,
+				C28D39B22A5690E300FC192A /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		C28D39C82A56988300FC192A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C28D39B92A5690E300FC192A /* Assets.xcassets */,
+				C28D39BE2A5690E300FC192A /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +329,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyGitHub/Info.plist;
+				INFOPLIST_FILE = MyGitHub/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MyGitHub;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -320,7 +360,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyGitHub/Info.plist;
+				INFOPLIST_FILE = MyGitHub/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MyGitHub;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
