@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyGitHub-icon" translatesAutoresizingMaskIntoConstraints="NO" id="1Fs-14-IPA">
-                                <rect key="frame" x="20" y="272" width="353" height="308"/>
+                                <rect key="frame" x="20" y="273" width="353" height="306.66666666666674"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

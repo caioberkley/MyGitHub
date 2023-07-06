@@ -9,20 +9,27 @@
 /* Begin PBXBuildFile section */
 		C28D39B12A5690E200FC192A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39B02A5690E200FC192A /* AppDelegate.swift */; };
 		C28D39B32A5690E300FC192A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39B22A5690E300FC192A /* SceneDelegate.swift */; };
-		C28D39B52A5690E300FC192A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39B42A5690E300FC192A /* ViewController.swift */; };
+		C28D39B52A5690E300FC192A /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39B42A5690E300FC192A /* UserSearchViewController.swift */; };
 		C28D39B82A5690E300FC192A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28D39B62A5690E300FC192A /* Main.storyboard */; };
 		C28D39BA2A5690E300FC192A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C28D39B92A5690E300FC192A /* Assets.xcassets */; };
 		C28D39BD2A5690E300FC192A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28D39BB2A5690E300FC192A /* LaunchScreen.storyboard */; };
 		C28D39CC2A569B9800FC192A /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39CB2A569B9800FC192A /* URLSession.swift */; };
 		C28D39CE2A569C2C00FC192A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39CD2A569C2C00FC192A /* NetworkService.swift */; };
 		C28D39D02A569C8200FC192A /* DataModel+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39CF2A569C8200FC192A /* DataModel+Constants.swift */; };
+		C28D39D22A56A8A800FC192A /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39D12A56A8A800FC192A /* UserSearchView.swift */; };
+		C28D39D52A56A96200FC192A /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39D42A56A96200FC192A /* UserDetailView.swift */; };
+		C28D39D72A56AA3100FC192A /* UserCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39D62A56AA3100FC192A /* UserCollectionView.swift */; };
+		C28D39D92A56AB4D00FC192A /* ServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39D82A56AB4D00FC192A /* ServiceViewModel.swift */; };
+		C28D39DC2A56AC4800FC192A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C28D39DB2A56AC4800FC192A /* Kingfisher */; };
+		C28D39DF2A56B3A000FC192A /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39DE2A56B3A000FC192A /* UserDetailViewController.swift */; };
+		C28D39E12A56B53900FC192A /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D39E02A56B53900FC192A /* UserCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C28D39AD2A5690E200FC192A /* MyGitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyGitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28D39B02A5690E200FC192A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C28D39B22A5690E300FC192A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C28D39B42A5690E300FC192A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C28D39B42A5690E300FC192A /* UserSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
 		C28D39B72A5690E300FC192A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C28D39B92A5690E300FC192A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C28D39BC2A5690E300FC192A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +37,12 @@
 		C28D39CB2A569B9800FC192A /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		C28D39CD2A569C2C00FC192A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C28D39CF2A569C8200FC192A /* DataModel+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataModel+Constants.swift"; sourceTree = "<group>"; };
+		C28D39D12A56A8A800FC192A /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
+		C28D39D42A56A96200FC192A /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		C28D39D62A56AA3100FC192A /* UserCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionView.swift; sourceTree = "<group>"; };
+		C28D39D82A56AB4D00FC192A /* ServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewModel.swift; sourceTree = "<group>"; };
+		C28D39DE2A56B3A000FC192A /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		C28D39E02A56B53900FC192A /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C28D39DC2A56AC4800FC192A /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,11 +76,12 @@
 		C28D39AF2A5690E200FC192A /* MyGitHub */ = {
 			isa = PBXGroup;
 			children = (
-				C28D39CA2A569B5F00FC192A /* Network */,
 				C28D39C72A56986D00FC192A /* App Delegate */,
+				C28D39CA2A569B5F00FC192A /* Network */,
 				C28D39C42A56983900FC192A /* Model */,
 				C28D39C52A56983E00FC192A /* View */,
 				C28D39C62A56984400FC192A /* Controller */,
+				C28D39DD2A56AC9B00FC192A /* ViewModel */,
 				C28D39C82A56988300FC192A /* Resources */,
 			);
 			path = MyGitHub;
@@ -83,8 +98,10 @@
 		C28D39C52A56983E00FC192A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C28D39BB2A5690E300FC192A /* LaunchScreen.storyboard */,
-				C28D39B62A5690E300FC192A /* Main.storyboard */,
+				C28D39D32A56A8C200FC192A /* Storyboards */,
+				C28D39D12A56A8A800FC192A /* UserSearchView.swift */,
+				C28D39D42A56A96200FC192A /* UserDetailView.swift */,
+				C28D39D62A56AA3100FC192A /* UserCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,7 +109,9 @@
 		C28D39C62A56984400FC192A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C28D39B42A5690E300FC192A /* ViewController.swift */,
+				C28D39B42A5690E300FC192A /* UserSearchViewController.swift */,
+				C28D39DE2A56B3A000FC192A /* UserDetailViewController.swift */,
+				C28D39E02A56B53900FC192A /* UserCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -124,6 +143,23 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		C28D39D32A56A8C200FC192A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C28D39BB2A5690E300FC192A /* LaunchScreen.storyboard */,
+				C28D39B62A5690E300FC192A /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C28D39DD2A56AC9B00FC192A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C28D39D82A56AB4D00FC192A /* ServiceViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +176,9 @@
 			dependencies = (
 			);
 			name = MyGitHub;
+			packageProductDependencies = (
+				C28D39DB2A56AC4800FC192A /* Kingfisher */,
+			);
 			productName = MyGitHub;
 			productReference = C28D39AD2A5690E200FC192A /* MyGitHub.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +207,9 @@
 				Base,
 			);
 			mainGroup = C28D39A42A5690E200FC192A;
+			packageReferences = (
+				C28D39DA2A56AC4800FC192A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = C28D39AE2A5690E200FC192A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -196,11 +238,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C28D39CE2A569C2C00FC192A /* NetworkService.swift in Sources */,
+				C28D39D22A56A8A800FC192A /* UserSearchView.swift in Sources */,
 				C28D39D02A569C8200FC192A /* DataModel+Constants.swift in Sources */,
-				C28D39B52A5690E300FC192A /* ViewController.swift in Sources */,
+				C28D39D72A56AA3100FC192A /* UserCollectionView.swift in Sources */,
+				C28D39D92A56AB4D00FC192A /* ServiceViewModel.swift in Sources */,
+				C28D39B52A5690E300FC192A /* UserSearchViewController.swift in Sources */,
+				C28D39D52A56A96200FC192A /* UserDetailView.swift in Sources */,
+				C28D39E12A56B53900FC192A /* UserCollectionViewCell.swift in Sources */,
 				C28D39B12A5690E200FC192A /* AppDelegate.swift in Sources */,
 				C28D39CC2A569B9800FC192A /* URLSession.swift in Sources */,
 				C28D39B32A5690E300FC192A /* SceneDelegate.swift in Sources */,
+				C28D39DF2A56B3A000FC192A /* UserDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +401,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = MyGitHub;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -384,7 +432,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = MyGitHub;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -424,6 +472,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C28D39DA2A56AC4800FC192A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C28D39DB2A56AC4800FC192A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C28D39DA2A56AC4800FC192A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C28D39A52A5690E200FC192A /* Project object */;
 }
