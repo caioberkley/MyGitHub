@@ -36,13 +36,4 @@ class UserCollectionView {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-    
-    let typeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.textColor = .black
-        return label
-    }()
-    
 }

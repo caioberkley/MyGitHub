@@ -14,13 +14,15 @@ class UserSearchViewController: UIViewController, ServiceViewModelOutput {
     private let userSearchView: UserSearchView
     private let cache = KingfisherManager.shared.cache
     
-    var searchView: UIStackView!
-    var searchTextView: UITextField!
-    var searchButton: UIButton!
-    var collectionView: UICollectionView!
-    var introLabel: UILabel!
-    var userData = [User]()
-    var currentPage: Int!
+    private lazy var searchView: UIStackView = userSearchView.searchView
+    private lazy var searchTextView: UITextField = userSearchView.searchTextView
+    private lazy var searchButton: UIButton = userSearchView.searchButton
+    private lazy var collectionView: UICollectionView = userSearchView.collectionView
+    private lazy var introLabel: UILabel = userSearchView.mainLabel
+    private lazy var currentPage: Int = Constants.page
+    private lazy var userData: [User] = []
+    
+    private let refreshControl = UIRefreshControl()
     
     init(serviceViewModel: ServiceViewModel, userSearchView: UserSearchView) {
         self.serviceViewModel = serviceViewModel
@@ -46,14 +48,6 @@ class UserSearchViewController: UIViewController, ServiceViewModelOutput {
     }
     
     fileprivate func viewSetup() {
-        searchView = userSearchView.searchView
-        searchTextView = userSearchView.searchTextView
-        searchButton = userSearchView.searchButton
-        collectionView = userSearchView.collectionView
-        introLabel = userSearchView.mainLabel
-        currentPage = Constants.page
-        userData = []
-        
         view.backgroundColor = UIColor(white: 1, alpha: 0.95)
         view.addSubview(searchView)
         view.addSubview(collectionView)
@@ -67,22 +61,25 @@ class UserSearchViewController: UIViewController, ServiceViewModelOutput {
         
         layOutConstraint()
         collectionViewSetup()
+        setupRefreshControl()
     }
     
     func updateViews(with data: [User]) {
-        self.userData = data
-        self.collectionView.reloadData()
-        if self.userData.count < 1 {
-            self.collectionView.isHidden = true
-            self.introLabel.isHidden = false
-            self.introLabel.text = "Sem resultados..."
-        } else {
-            self.introLabel.isHidden = true
-            self.collectionView.isHidden = false
-            self.introLabel.text = "Sucesso!"
-            self.collectionView.reloadData()
-        }
+        userData = data
+        collectionView.reloadData()
+        collectionView.isHidden = userData.isEmpty
+        introLabel.isHidden = !userData.isEmpty
+        introLabel.text = userData.isEmpty ? "Sem resultados..." : "Sucesso!"
+        refreshControl.endRefreshing()
     }
+    
+    func clearSearch() {
+            searchTextView.text = ""
+            searchTextView.placeholder = "Pesquisa limpa!"
+            userData = []
+            collectionView.reloadData()
+            collectionView.isHidden = userData.isEmpty
+        }
     
     @objc func initiateSearch() {
         let searchQuery = searchTextView.text
@@ -104,7 +101,7 @@ extension UserSearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return userData.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCollectionViewCell.identifier, for: indexPath) as? UserCollectionViewCell else {
             return UICollectionViewCell()
@@ -112,7 +109,6 @@ extension UserSearchViewController: UICollectionViewDataSource {
         cell.populateCell(with: userData[indexPath.row])
         return cell
     }
-
 }
 
 extension UserSearchViewController: UICollectionViewDelegate {
@@ -155,7 +151,7 @@ extension UserSearchViewController: UIScrollViewDelegate {
     
     internal func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let height = view.frame.height
-        if self.collectionView.panGestureRecognizer.translation(in: self.collectionView).y > height {
+        if collectionView.panGestureRecognizer.translation(in: collectionView).y > height {
             refreshData()
         }
     }
@@ -166,7 +162,22 @@ extension UserSearchViewController: UIScrollViewDelegate {
         Constants.per_page += 10
         initiateSearch()
         collectionView.reloadData()
-        self.view.layoutIfNeeded()
+        view.layoutIfNeeded()
     }
+}
 
+// MARK: - Pull-to-Refresh
+extension UserSearchViewController {
+    private func setupRefreshControl() {
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        refreshControl.tintColor = .black
+    }
+    
+    @objc private func refresh() {
+        currentPage = Constants.page
+        clearSearch()
+        collectionView.reloadData()
+        view.layoutIfNeeded()
+    }
 }

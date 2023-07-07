@@ -38,13 +38,4 @@ public class UserDetailView {
         imageView.layer.cornerRadius = 30
         return imageView
     }()
-    
-    let type: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.textColor = .black
-        label.textAlignment = .center
-        return label
-    }()
 }

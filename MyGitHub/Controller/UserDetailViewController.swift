@@ -52,16 +52,18 @@ class DetailViewController: UIViewController {
         container.addArrangedSubview(login)
         container.addArrangedSubview(avatar)
         
+        container.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             container.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             container.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            container.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -60),
-            container.heightAnchor.constraint(equalTo: view.heightAnchor, constant: -100)
+            container.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            container.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6)
         ])
     }
+
     
     func populateView() {
-        login?.text = user.login
+        login.text = user.login
         serviceViewModel?.loadDetailImage(with: user.avatarURL, imageView: avatar)
     }
 }

@@ -21,45 +21,45 @@ class ServiceViewModel {
         self.networkService = networkService
     }
     
-    public func validateQuery(query: String) -> Bool {
-        var isValid: Bool
-        if query.count != 0 {
-            isValid = true
-        } else {
-            isValid = false
-        }
-        return isValid
-    }
-    
     public func fetchData(searchQuery: String?, page: Int) {
-        if validateQuery(query: searchQuery ?? "user") {
-            Constants.search_query = searchQuery ?? ""
-        } else {
+        let query = searchQuery ?? "user"
+        guard validateQuery(query: query) else {
             return
         }
+        
+        Constants.search_query = query
         Constants.page = page
+        
         networkService.networkRequest { [weak self] result in
             switch result {
-                case .success(let userData):
-                    let data = userData.sorted{ $0.login.lowercased() < $1.login.lowercased() }
-                    _ = data.filter({ $0.login.contains(searchQuery ?? "") })
-                    self?.output?.updateViews(with: data)
-                    Constants.total_page = data.count / Constants.per_page
-                    if data.count % Constants.per_page != 0 {
-                        Constants.total_page += 1
-                    }
-                case .failure:
-                    print("An error occured: ", LocalizedError.self)
+            case .success(let userData):
+                let data = userData
+                    .filter { $0.login.contains(query) }
+                    .sorted { $0.login.lowercased() < $1.login.lowercased() }
+                
+                self?.output?.updateViews(with: data)
+                
+                Constants.total_page = data.count / Constants.per_page
+                if data.count % Constants.per_page != 0 {
+                    Constants.total_page += 1
+                }
+                
+            case .failure(let error):
+                print("An error occurred: \(error)")
             }
         }
     }
     
     public func loadImage(with url: String, imageView: UIImageView?) {
-        let imageLink = URL(string: url)
-        let processor = DownsamplingImageProcessor(size: imageView?.bounds.size ?? CGSize(width: 200, height: 188))
-                     |> RoundCornerImageProcessor(cornerRadius: 50)
-        imageView?.kf.indicatorType = .activity
-        imageView?.kf.setImage(
+        guard let imageView = imageView, let imageLink = URL(string: url) else {
+            return
+        }
+        
+        let processor = DownsamplingImageProcessor(size: imageView.bounds.size)
+            |> RoundCornerImageProcessor(cornerRadius: 50)
+        
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(
             with: imageLink,
             placeholder: UIImage(systemName: "person"),
             options: [
@@ -68,8 +68,7 @@ class ServiceViewModel {
                 .transition(.fade(1)),
                 .cacheOriginalImage
             ])
-        {
-            result in
+        { result in
             switch result {
             case .success(let value):
                 print("Task done for: \(value.source.url?.absoluteString ?? "")")
@@ -80,7 +79,14 @@ class ServiceViewModel {
     }
     
     public func loadDetailImage(with url: String, imageView: UIImageView?) {
-        let imageLink = URL(string: url)
-        imageView?.kf.setImage(with: imageLink)
+        guard let imageView = imageView, let imageLink = URL(string: url) else {
+            return
+        }
+        
+        imageView.kf.setImage(with: imageLink)
+    }
+    
+    private func validateQuery(query: String) -> Bool {
+        return !query.isEmpty
     }
 }

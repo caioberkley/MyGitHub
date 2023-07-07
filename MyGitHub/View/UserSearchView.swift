@@ -24,7 +24,6 @@ public class UserSearchView {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Digite um nome de usuário"
-        textField.tintColor = .gray
         textField.autocapitalizationType = .none
         textField.enablesReturnKeyAutomatically = true
         textField.textColor = .black
@@ -34,7 +33,7 @@ public class UserSearchView {
     let searchButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.tintColor = .blue
+        button.tintColor = .black
         button.setImage(UIImage(systemName: "magnifyingglass.circle"), for: .normal)
         return button
     }()
@@ -64,7 +63,6 @@ public class UserSearchView {
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         return label
     }()
-    
 }
 
 //MARK: Activity Indicator for loading screens

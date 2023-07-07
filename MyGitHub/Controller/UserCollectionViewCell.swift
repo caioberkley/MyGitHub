@@ -47,17 +47,8 @@ class UserCollectionViewCell: UICollectionViewCell {
     }
     
     func populateCell(with data: User) {
-        if data.login.count > 10 {
-            let text = Array(data.login.lowercased())
-            var newText = ""
-            for i in 0...9 {
-                newText += String(text[i])
-            }
-            login.text = newText
-        } else {
-            login.text = data.login
-        }
+        let loginText = data.login.lowercased().prefix(10)
+        login.text = String(loginText)
         serviceViewModel.loadImage(with: data.avatarURL, imageView: avatar)
     }
-    
 }
