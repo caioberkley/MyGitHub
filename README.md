@@ -1,12 +1,12 @@
 # MyGitHub
  Github Public API Swift Project
 
-App feito para desafio solicitado por empresa privada, com o objetivo de consultar a API Pública do GitHub e acessar os dados dos usuários:
+App made for a challenge requested by a private company, in order to query GitHub's Public API and access user data: 
 
 - MVVM
 - ViewCode
 - SPM (KingFisher)
 
-Para utilizar basta rodar o app no simulador ou dispositivo iOS compatível (iOS 15 ou maior) realizar uma pesquisa digitando na caixa de busca, para limpar a pesquisa basta realizar um swipe para baixo(provavelmente mudará no futuro)
+To use it, just run the app on the simulator or compatible iOS device (iOS 15 or higher) perform a search by typing in the search box, to clear the search just swipe down (probably will change in the future) 
 
-Projeto não finalizado totalmente, essa primeira versão considero apenas como um MVP para avaliação, com funcionalidades base feitas no tempo disponível de entrega.
+Project not fully finalized, this first version I consider only as an MVP for evaluation, with base functionalities made in the available delivery time.
